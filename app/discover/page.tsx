@@ -1,7 +1,11 @@
+import MapWrapper from "@/components/map-wrapper";
+
 const page = () => {
     return (
-        <div>Discover</div>
-    )
+        <div>
+            <MapWrapper />
+        </div>
+    );
 }
 
 export default page
