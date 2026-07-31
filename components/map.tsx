@@ -11,12 +11,16 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { useState } from "react";
 
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
+
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 
 (L.Icon.Default as any).mergeOptions({
-    iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-    iconUrl: require("leaflet/dist/images/marker-icon.png"),
-    shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
+    iconRetinaUrl: typeof markerIcon2x === "string" ? markerIcon2x : (markerIcon2x as any).src,
+    iconUrl: typeof markerIcon === "string" ? markerIcon : (markerIcon as any).src,
+    shadowUrl: typeof markerShadow === "string" ? markerShadow : (markerShadow as any).src,
 });
 
 function ClickHandler() {
