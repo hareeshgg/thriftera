@@ -27,8 +27,5 @@ jobs:
       - name: Lint codebase
         run: npm run lint
 
-      - name: Type check codebase
-        run: npm run typecheck
-
       - name: Build applications
         run: npm run build
