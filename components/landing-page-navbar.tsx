@@ -16,7 +16,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     return (
         <>
-            <div className={`flex absolute top-0 right-0 w-full z-60 pointer-events-none justify-between border-b-3`}>
+            <div className={`flex absolute top-0 right-0 w-full z-999 bg-background pointer-events-none justify-between border-b-3`}>
                 <div className="px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8">
                     <h1 className="font-black tracking-tighter text-2xl sm:text-3xl lg:text-4xl">
                         thriftera
@@ -41,7 +41,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <nav className={`fixed top-0 left-0 w-full h-screen z-50 transform transition-transform duration-300 ease-in-out ${open ? 'translate-y-0' : '-translate-y-full'}`}>
+            <nav className={`fixed top-0 left-0 bg-white w-full h-screen z-50 transform transition-transform duration-300 ease-in-out ${open ? 'translate-y-0' : '-translate-y-full'}`}>
                 <div className="flex flex-col pt-20 sm:pt-24 lg:pt-28">
                     <ul className="flex flex-col">
                         {menuItems.map(({ title, href }, index) => (
