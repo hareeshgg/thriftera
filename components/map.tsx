@@ -15,12 +15,14 @@ import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-delete (L.Icon.Default.prototype as any)._getIconUrl;
+import { StaticImageData } from "next/image";
 
-(L.Icon.Default as any).mergeOptions({
-    iconRetinaUrl: typeof markerIcon2x === "string" ? markerIcon2x : (markerIcon2x as any).src,
-    iconUrl: typeof markerIcon === "string" ? markerIcon : (markerIcon as any).src,
-    shadowUrl: typeof markerShadow === "string" ? markerShadow : (markerShadow as any).src,
+delete (L.Icon.Default.prototype as L.Icon.Default & { _getIconUrl?: unknown })._getIconUrl;
+
+(L.Icon.Default as unknown as { mergeOptions: (options: L.BaseIconOptions) => void }).mergeOptions({
+    iconRetinaUrl: typeof markerIcon2x === "string" ? markerIcon2x : (markerIcon2x as StaticImageData).src,
+    iconUrl: typeof markerIcon === "string" ? markerIcon : (markerIcon as StaticImageData).src,
+    shadowUrl: typeof markerShadow === "string" ? markerShadow : (markerShadow as StaticImageData).src,
 });
 
 function ClickHandler() {
