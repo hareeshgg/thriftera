@@ -24,7 +24,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex justify-center items-center ">
                     <div className="hidden md:flex px-12 py-8 gap-2">
-                        <Link href={"/login"} className="pointer-events-auto cursor-pointer text-lg tracking-widest underline underline-offset-4 active:underline hover:underline-offset-6 duration-200 ease-in-out transition-all ">Start selling now</Link>
+                        <Link href={"/login"} className="pointer-events-auto cursor-pointer text-lg tracking-widest underline underline-offset-4 active:underline hover:underline-offset-6 duration-200 ease-in-out transition-all ">Contribute to the community</Link>
                         <MoveDown />
                     </div>
                     <div className="border-l-3 px-5 py-5 sm:px-8 sm:py-6 lg:px-12 lg:py-8">
